@@ -5,7 +5,7 @@ import citation_finder as cf
 
 st. set_page_config(layout="wide")
 
-subject=st.text_input('Søk på temaord', 'Søk', help='Skriv ønsket søkeord for tema. Du kan bruke * som wildcard før eller etter søkeordet, f.eks. "språk*"')
+subject=st.text_input('Søk på temaord', help='Skriv ønsket søkeord for tema. Du kan bruke * som wildcard før eller etter søkeordet, f.eks. "språk*"')
 st.write(subject)
 
 korpus = dh.Corpus(doctype='digibok', limit=500, subject=subject)
