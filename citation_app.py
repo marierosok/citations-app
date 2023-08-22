@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 import citation_finder as cf
 
-st. set_page_config(layout="wide")
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
 subject=st.text_input('Søk på temaord', 'Søk', help='Skriv ønsket søkeord for tema. Du kan bruke * som wildcard før eller etter søkeordet, f.eks. "språk*"')
 st.write(subject)
