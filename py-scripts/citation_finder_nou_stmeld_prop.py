@@ -13,7 +13,6 @@ import dhlab as dh
 
 # To do:
 # add current year with datetime
-# update regex with [A-z] etc.?
 
 
 def citation_finder_nou_stmeld_prop(corpus, yearspan=(1000,2024), conc_limit=4000):
