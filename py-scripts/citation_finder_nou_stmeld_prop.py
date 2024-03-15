@@ -16,7 +16,7 @@ import dhlab as dh
 # update regex with [A-z] etc.?
 
 
-def citation_finder(corpus, yearspan=(1000,2024), conc_limit=4000):
+def citation_finder_nou_stmeld_prop(corpus, yearspan=(1000,2024), conc_limit=4000):
     
     tall = list(range(yearspan[0],yearspan[1]))
 

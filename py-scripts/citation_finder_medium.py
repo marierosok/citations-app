@@ -13,7 +13,6 @@ import dhlab as dh
 
 # To do:
 # add current year with datetime
-# update regex with [A-z] etc.
 
 
 def findone(regx, s):
@@ -26,7 +25,7 @@ def findone(regx, s):
 
 
 
-def citation_finder(corpus, yearspan=(1000,2024), conc_limit=4000):
+def citation_finder_medium(corpus, yearspan=(1000,2024), conc_limit=4000):
     
     tall = list(range(yearspan[0],yearspan[1]))
 
@@ -55,9 +54,9 @@ def citation_finder(corpus, yearspan=(1000,2024), conc_limit=4000):
         return match_explode
 
     
-    regex1 = r"(?:[A-ZÆØÅ](?:[A-ZÆØÅa-zæøå-]+|\s*\.)\s*,?\s*)+(?:\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))\s*)?,?\s*\[?\s*\d{4}\s*[a-zæøå]?\s*\.?\s*\]?(?:\s*[,;:/)\s–-]\s*(?:[PpSs]\s*\.?)?\[?\s*\d{1,4}\s*[a-zæøå]?\s*\.?\s*\]?(?:\s*[,–-]\s*\d{1,4}\s*[a-zæøå]?\s*\.?)?)*\s*[);]"
-    regex2 = r"(?<=[(;])[^(;\d]*?[A-ZÆØÅa-zæøå][^(;]*?\d{4}[^);]*?(?=[);])"
-    regex3 = r"(?:(?:[A-ZÆØÅ](?:[A-ZÆØÅa-zæøå-]+|\s*\.)\s*,?\s*)+(?:og|and|&)\s*)?(?:[A-ZÆØÅ](?:[A-ZÆØÅa-zæøå-]+|\s*\.)\s*,?\s*)+(?:\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))\s*)?\s*\(\s*\d{4}\D[^)]*?\)"
+    regex1 = r"(?:[A-ZÀ-Ž](?:[A-zÀ-ž-]+|\s*\.)\s*,?\s*)+(?:\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))\s*)?,?\s*\[?\s*\d{4}\s*[a-zæøå]?\s*\.?\s*\]?(?:\s*[,;:/)\s–-]\s*(?:[PpSs]\s*\.?)?\[?\s*\d{1,4}\s*[a-zæøå]?\s*\.?\s*\]?(?:\s*[,–-]\s*\d{1,4}\s*[a-zæøå]?\s*\.?)?)*\s*[);]"
+    regex2 = r"(?<=[(;])[^(;\d]*?[A-zÀ-ž][^(;]*?\d{4}[^);]*?(?=[);])"
+    regex3 = r"(?:(?:[A-ZÀ-Ž](?:[A-zÀ-ž-]+|\s*\.)\s*,?\s*)+(?:og|and|&)\s*)?(?:[A-ZÀ-Ž](?:[A-zÀ-ž-]+|\s*\.)\s*,?\s*)+(?:\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))\s*)?\s*\(\s*\d{4}\D[^)]*?\)"
     
     concs1['parentes'] = concs1.concordance.apply(lambda x: findone(regex1, x))
     concs2 = concs1[concs1['parentes'] != 'itj no']

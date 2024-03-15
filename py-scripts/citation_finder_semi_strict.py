@@ -13,10 +13,9 @@ import dhlab as dh
 
 # To do:
 # add current year with datetime
-# update regex with [A-z] etc.
 
 
-def citation_finder(corpus, yearspan=(1000,2024), conc_limit=4000):
+def citation_finder_semi_strict(corpus, yearspan=(1000,2024), conc_limit=4000):
     
     tall = list(range(yearspan[0],yearspan[1]))
 
@@ -44,8 +43,8 @@ def citation_finder(corpus, yearspan=(1000,2024), conc_limit=4000):
         return match_explode
     
     
-    regex1 = r"(?<=[(;])\s*[^(;\d]*?[A-ZÆØÅ][A-ZÆØÅa-zæøå-]+\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))?\s*,?\s*\d{4}\s*[a-zæøå]?(?:\s*\[\s*\d{4}\s*\]\s*[a-zæøå]?)?(?:\s*[,:]\s*(?:[PpSs]\s*\.\s*)?\d{1,4}(?:\s*[,–-]\s*\d{1,4})*)?\s*(?=[);])"
-    regex2 = r"(?:[A-ZÆØÅ][A-ZÆØÅa-zæøå-]+\s*(?:,|og|and|&)\s*)*[A-ZÆØÅ][A-ZÆØÅa-zæøå-]+\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))?\s*\(\s*\d{4}\s*[a-zæøå]?(?:\s*\[\s*\d{4}\s*\]\s*[a-zæøå]?)?(?:\s*[,:]\s*(?:[PpSs]\s*\.\s*)?\d{1,4}(?:\s*[,–-]\s*\d{1,4})*)?\s*[);]"
+    regex1 = r"(?<=[(;])\s*[^(;\d]*?[A-ZÀ-Ž][A-zÀ-ž-]+\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))?\s*,?\s*\d{4}\s*[a-zæøå]?(?:\s*\[\s*\d{4}\s*\]\s*[a-zæøå]?)?(?:\s*[,:]\s*(?:[PpSs]\s*\.\s*)?\d{1,4}(?:\s*[,–-]\s*\d{1,4})*)?\s*(?=[);])"
+    regex2 = r"(?:[A-ZÀ-Ž][A-zÀ-ž-]+\s*(?:,|og|and|&)\s*)*[A-ZÀ-Ž][A-zÀ-ž-]+\s*(?:et\s*al\.?|m(?:ed|\s*\.?)\s*fl(?:ei?re?|\s*\.?))?\s*\(\s*\d{4}\s*[a-zæøå]?(?:\s*\[\s*\d{4}\s*\]\s*[a-zæøå]?)?(?:\s*[,:]\s*(?:[PpSs]\s*\.\s*)?\d{1,4}(?:\s*[,–-]\s*\d{1,4})*)?\s*[);]"
     
     i_parentes = match_and_explode(concs1, regex1)
     u_parentes = match_and_explode(concs1, regex2)
