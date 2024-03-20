@@ -1,6 +1,7 @@
 import re
 import pandas as pd
 import dhlab as dh
+import datetime
 
 
 #### Bygge korpus
@@ -11,11 +12,12 @@ import dhlab as dh
 
 #### corpus = dh.Corpus(doctype='digibok', subject=subject, limit=corp_limit, from_year=from_year)
 
-# To do:
-# add current year with datetime
 
 
-def citation_finder_nou_stmeld_prop(corpus, yearspan=(1000,2024), conc_limit=4000):
+curr_year = datetime.datetime.today().year
+
+
+def citation_finder_nou_stmeld_prop(corpus, yearspan=(1000,curr_year), conc_limit=4000):
     
     tall = list(range(yearspan[0],yearspan[1]))
 
