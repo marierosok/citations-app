@@ -26,7 +26,7 @@ def findone(regx, s):
 curr_year = datetime.datetime.today().year
 
 
-def citation_finder_medium(corpus, yearspan=(1000,curr_year), conc_limit=4000):
+def citation_finder_lenient(corpus, yearspan=(1000,curr_year), conc_limit=4000):
     
     tall = list(range(yearspan[0],yearspan[1]))
 

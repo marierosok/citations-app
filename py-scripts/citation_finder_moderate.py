@@ -17,7 +17,7 @@ import datetime
 curr_year = datetime.datetime.today().year
 
 
-def citation_finder_semi_strict(corpus, yearspan=(1000,curr_year), conc_limit=4000):
+def citation_finder_moderate(corpus, yearspan=(1000,curr_year), conc_limit=4000):
     
     tall = list(range(yearspan[0],yearspan[1]))
 
