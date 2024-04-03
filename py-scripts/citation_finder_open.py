@@ -47,7 +47,7 @@ def citation_finder_open(corpus, yearspan=(1000,curr_year), conc_limit=4000):
 
     
     regex1 = r"(?<=[(;])[^(;\d]*?[A-zÀ-ž][^(;]*?\d{4}[^);]*?(?=[);])"
-    regex2 = r"(?:\b[A-zÀ-ž-]+\s*|^)\(\s*\d{4}[^)]*?\)"
+    regex2 = r"(?:[^()\s]+\s+){1,5}\(\s*\d{4}[^)]*?\)"
     
     i_parentes = match_and_explode(concs1, regex1)
     u_parentes = match_and_explode(concs1, regex2)
