@@ -21,7 +21,7 @@ curr_year = datetime.datetime.today().year
 
 
 def citation_finder(corpus, strictness='moderate', yearspan=(1000,curr_year), conc_limit=4000):
-    """Description"""
+    """Finds citations in text using regular expressions"""
     
     
     tall = list(range(yearspan[0],yearspan[1]))
