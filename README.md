@@ -1,9 +1,9 @@
 # Citation-finder
 
-Citation-finder finds in-text citations in a text corpus using regular expressions. The regular expressions find citations that follow the author name-publication year format of the [APA](https://i.ntnu.no/academic-writing/apa-7), [Harvard](https://i.ntnu.no/academic-writing/harvard) and [Chicago B](https://i.ntnu.no/academic-writing/chicago-b) styles.
+Citation-finder finds in-text citations in a text corpus using regular expressions. The expressions find citations that follow the author name-publication year format of the [APA](https://i.ntnu.no/academic-writing/apa-7), [Harvard](https://i.ntnu.no/academic-writing/harvard) and [Chicago B](https://i.ntnu.no/academic-writing/chicago-b) styles.
 
 ### How to use
-Citation-finder uses the [dhlab python package](https://dhlab.readthedocs.io/en/stable/) from the National Library of Norway to find concordances in a corpus. 
+Citation-finder takes a corpus created with the [dhlab package](https://dhlab.readthedocs.io/en/stable/) from The National Library of Norway.  
 
 Install and import dhlab, and [create a corpus](https://dhlab.readthedocs.io/en/stable/library/generated/dhlab.Corpus.html#dhlab.Corpus).
 
@@ -17,7 +17,7 @@ import dhlab as dh
 corpus = dh.Corpus(doctype='digibok')
 ```
 
-Import citation-finder and call the function on the corpus. The additional, optional arguments are yearspan and limit. The function searches for concordances using a range of four digit numbers that represent publication years. The range from year to year can be defined with yearspan. The default is from 1000 to the current year. Limit refers to the concordance limit. The default is 4000.
+Import citation-finder and call the function on the corpus.
 
 ```
 import citaton_finder as cf
@@ -25,6 +25,8 @@ import citaton_finder as cf
 ```
 cf.citation_finder(corpus, yearspan=(1900,1965), limit=500)
 ```
+
+The additional, optional arguments are yearspan and limit. The function searches for concordances using a range of four digit numbers that represent publication years. The range from year to year can be defined with yearspan. The default is from 1000 to the current year. Limit refers to the concordance limit. The default is 4000.
 
 The function returns a Pandas DataFrame with the individual citation matches and their associated URN from the dhlab corpus.
 
