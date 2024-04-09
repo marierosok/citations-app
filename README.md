@@ -9,11 +9,9 @@ Install and import dhlab, and [create a corpus](https://dhlab.readthedocs.io/en/
 
 ```
 pip install -U dhlab
-```
-```
+
 import dhlab as dh
-```
-```
+
 corpus = dh.Corpus(doctype='digibok')
 ```
 
@@ -21,8 +19,7 @@ Import citation-finder and call the function on the corpus.
 
 ```
 import citaton_finder as cf
-```
-```
+
 cf.citation_finder(corpus, yearspan=(1900,1965), limit=500)
 ```
 
