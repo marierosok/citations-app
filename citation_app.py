@@ -37,9 +37,6 @@ df.columns = ["urn","citation"]
 
 res = df.merge(corpus.frame, left_on='urn', right_on='urn')['urn title author year citation'.split()]
 
-df.columns = ["urn","citation"]
-res = df.merge(corpus.frame, left_on='urn', right_on='urn')['urn title author year citation'.split()]
-
 "Corpus + citations"
 
 st.dataframe(res)
