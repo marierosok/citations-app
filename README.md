@@ -3,7 +3,7 @@
 Citation-finder finds in-text citations in a text corpus using regular expressions. The expressions find citations that follow the author name-publication year format of the [APA](https://i.ntnu.no/academic-writing/apa-7), [Harvard](https://i.ntnu.no/academic-writing/harvard) and [Chicago B](https://i.ntnu.no/academic-writing/chicago-b) styles.
 
 ### How to use
-Citation-finder takes a corpus created with the [dhlab package](https://dhlab.readthedocs.io/en/stable/) from The National Library of Norway.  
+Citation-finder takes a corpus created with the [dhlab package](https://dhlab.readthedocs.io/en/stable/) from The National Library of Norway.
 
 Install and import dhlab, and [create a corpus](https://dhlab.readthedocs.io/en/stable/library/generated/dhlab.Corpus.html#dhlab.Corpus).
 
@@ -38,7 +38,7 @@ Additionally the patterns allow for several optional elements:
    * Lee, Singh and Smith (1991)
  * author names can include initials
    * (P. W. Smith, 1991)
-   * P. W. Smith (1991)  
+   * P. W. Smith (1991)
  * author names can be followed by "et al." or "m.fl." in Norwegian
    * (Smith et al., 1991)
    * Smith et al. (1991)
