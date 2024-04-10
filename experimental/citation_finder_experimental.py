@@ -96,7 +96,7 @@ def citation_finder(corpus, strictness='moderate', yearspan=(1000,curr_year), co
         concs2 = concs1[concs1['parentes'] != 'itj no']
         concs2 = concs2[['urn', 'concordance']]
         
-        i_parentes = match_and_explode(concs_l, regex_l2)
+        i_parentes = match_and_explode(concs2, regex_l2)
         u_parentes = match_and_explode(concs1, regex_l3)
                 
     elif strictness == 'open':
