@@ -35,7 +35,7 @@ corpus = dh.Corpus(doctype='digibok', subject=subject, limit=corp_limit)
 df = cf.citation_finder(corpus, yearspan=yearspan, conc_limit=conc_limit)
 df.columns = ["urn","citation"]
 
-res = df.merge(corpus.frame, left_on='urn', right_on='urn')['urn title author year citation'.split()]
+res = df.merge(corpus.frame, left_on='urn', right_on='urn')['urn title authors year citation'.split()]
 
 "Corpus + citations"
 
